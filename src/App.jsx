@@ -1,5 +1,7 @@
+import FAQ from "./pages/FAQ/FAQ";
+
 function App() {
-  return <h1>pishoooooooooooooooooooooooooooooooooo</h1>;
+  return <FAQ />;
 }
 
 export default App;
