@@ -1,7 +1,20 @@
 import FAQ from "./pages/FAQ/FAQ";
+import PrivacyPolicy from "./pages/privacyPolicy/index";
+import UsingPrivacy from "./pages/usingPrivacy";
+import ItellectualProperty from "./pages/itellectualProperty";
+import AboutSection from "./pages/customerInformation";
 
 function App() {
-  return <FAQ />;
+  return (
+    <h1> Pisho Work Here</h1>
+    // <>
+    //    <FAQ />
+    //    <PrivacyPolicy />
+    //    <UsingPrivacy />
+    //    <ItellectualProperty />
+    //    <AboutSection />
+    // </>
+  );
 }
 
 export default App;
