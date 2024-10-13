@@ -1,8 +1,18 @@
-function App() {
-  return <h1>pishoooooooooooooooooooooooooooooooooo</h1>;
-}
+// App.js or HomePage.js
+import React from 'react';
+import TechBlog from './components/Blog/Blog'; 
+
+const App = () => {
+  return (
+    <div>
+      <h1>Welcome to the Main Page</h1>
+      <TechBlog /> 
+    </div>
+  );
+};
 
 export default App;
+
 /*
   This is the main application file for the React project.
 
