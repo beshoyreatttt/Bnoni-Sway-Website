@@ -7,12 +7,11 @@ import { loadStripe } from '@stripe/stripe-js'; // LoadStripe function
 import { Elements } from '@stripe/react-stripe-js';
 const stripePromise = loadStripe('pk_test_51Q9Vk62M98qASWQqc6u7n5Br3p6QrHcc1lwFHR4Z8AdGs6vbE3QBdE55uFgTxpnLY3D6xvlgYw6A8DrlqWynFMFL00OoSAg4i0'); 
 
-import ProductComponent from './components/ProductForStripe/productforstripe';
+// import ProductComponent from './components/ProductForStripe/productforstripe';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  <Elements stripe={stripePromise}>
   <App />
-  <ProductComponent />
 </Elements>,
 
 );

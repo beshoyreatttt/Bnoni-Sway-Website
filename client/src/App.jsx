@@ -1,12 +1,31 @@
 // App.js or HomePage.js
-import React from 'react';
-import TechBlog from './components/Blog/Blog'; 
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import axios from "axios";
+import Joi from "joi";
+import jwtDecode from "jwt-decode";
+// import lucide-react
 
+import TechBlog from "./components/Blog/Blog";
+import FAQ from "./pages/FAQ/FAQ";
+import PrivacyPolicy from "./pages/privacyPolicy/index";
+import UsingPrivacy from "./pages/usingPrivacy";
+import ItellectualProperty from "./pages/itellectualProperty";
+import AboutSection from "./pages/customerInformation";
 const App = () => {
   return (
-    <div>
-      <h1>Welcome to the Main Page</h1>
-      <TechBlog /> 
+    <div className="container">
+      <h1>Ereny Blog</h1>
+      <TechBlog />
+      <h1> Pisho Work Here</h1>
+      <>
+        <FAQ />
+        <PrivacyPolicy />
+        <UsingPrivacy />
+        <ItellectualProperty />
+        <AboutSection />
+      </>
     </div>
   );
 };
@@ -50,6 +69,19 @@ export default App;
 
   11. **React Query** (optional):
       - A library for managing server state, caching, and fetching data from APIs. It simplifies data-fetching logic and improves performance.
+  11. **React Query** (optional):
+      - A library for managing server state, caching, and fetching data from APIs. It simplifies data-fetching logic and improves performance.
+
+  11. **React Query** (optional):
+      - A library for managing server state, caching, and fetching data from APIs. It simplifies data-fetching logic and improves performance.
+       طلبات الجماهير 
+      12. **Bootstrap** 
+      13. fortawesome 
+      14. lucide-react  
+      15. joi
+      16. jwt
+
+
 
   This setup provides a robust foundation for building a modern web application with React, ensuring a great user experience and maintainable code.
 */
