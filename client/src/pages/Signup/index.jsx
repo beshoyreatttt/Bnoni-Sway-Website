@@ -166,7 +166,7 @@ export default function SignUp() {
                 </div>
                 <div className="col-md-6 mb-3">
                   <label htmlFor="lastname" className="form-label fw-bold">
-                    First Name :
+                    Last Name :
                   </label>
                   <div className="input-group mb-2">
                     <span className="input-group-text bg-transparent">
