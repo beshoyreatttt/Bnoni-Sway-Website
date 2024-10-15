@@ -56,11 +56,11 @@ export default function Navbar({ userData, logout }) {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  activeLink === "/products" ? "active" : ""
+                  activeLink === "/product" ? "active" : ""
                 }`}
                 aria-current="page"
-                to="/products"
-                onClick={() => handleLinkClick("/products")}
+                to="/product"
+                onClick={() => handleLinkClick("/product")}
               >
                 Products
               </Link>
@@ -90,13 +90,13 @@ export default function Navbar({ userData, logout }) {
             <li className="nav-item">
               <Link
                 className={`nav-link ${
-                  activeLink === "/reviews" ? "active" : ""
+                  activeLink === "/about" ? "active" : ""
                 }`}
                 aria-current="page"
-                to="/reviews"
-                onClick={() => handleLinkClick("/reviews")}
+                to="/about"
+                onClick={() => handleLinkClick("/about")}
               >
-                Reviews
+                About us
               </Link>
             </li>
           </ul>

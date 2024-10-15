@@ -1,8 +1,10 @@
 import React from "react";
 import "./style.css";
-function AboutSection() {
+import Navbar from "../../components/Header/Header";
+function AboutSection(userData, logout) {
   return (
     <section className="about-section">
+      <Navbar userData={userData} logout={logout} />
       <h2 className="section-title">BNONI SWAY</h2>
       <div className="hero">
         <div className="hero-desc">

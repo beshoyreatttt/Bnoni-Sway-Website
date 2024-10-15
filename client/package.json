@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@babel/types": "^7.25.8",
+    "@chakra-ui/react": "^2.10.2",
+    "@emotion/react": "^11.13.3",
+    "@emotion/styled": "^11.13.0",
     "@fortawesome/fontawesome-free": "^6.6.0",
     "@stripe/react-stripe-js": "^2.8.1",
     "@stripe/stripe-js": "^4.8.0",
@@ -12,7 +15,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.7.7",
     "bootstrap": "^5.3.3",
-    "framer-motion": "^11.11.0",
+    "framer-motion": "^11.11.9",
     "joi": "^17.13.3",
     "jwt-decode": "^4.0.0",
     "lucide-react": "^0.452.0",

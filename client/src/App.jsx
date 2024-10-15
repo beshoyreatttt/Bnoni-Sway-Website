@@ -11,13 +11,14 @@ import SignUp from "./pages/Signup/index";
 import Login from "./pages/Signin/index";
 import ForgetPassword from "./components/ForgetPassword/index";
 import ConfirmCode from "./components/ConfirmCode";
-
-// import TechBlog from "./components/Blog/Blog";
+import TechBlog from "./components/Blog/Blog";
+import AboutSection from "./pages/customerInformation";
+import ProductPage from "./pages/product/ProductPage";
+import ProductDetails from "./pages/productDetails/ProductDetails";
 // import FAQ from "./pages/FAQ/FAQ";
 // import PrivacyPolicy from "./pages/privacyPolicy/index";
 // import UsingPrivacy from "./pages/usingPrivacy";
 // import ItellectualProperty from "./pages/itellectualProperty";
-// import AboutSection from "./pages/customerInformation";
 const App = () => {
   let navigate = useNavigate();
   let [userData, SetUserData] = useState(null);
@@ -68,6 +69,10 @@ const App = () => {
       />
       <Route path="/forgetPassword" element={<ForgetPassword />} />
       <Route path="/confirmCode" element={<ConfirmCode />} />
+      <Route path="/blog" logout={logout} userData={userData} element={<TechBlog />} />
+      <Route path="/about" logout={logout} userData={userData} element={<AboutSection />} />
+      <Route path="/product" logout={logout} userData={userData}  element={<ProductPage />} />
+      <Route path="/productDetails/:id" logout={logout} userData={userData} element={<ProductDetails />} />
       <Route
         path="*"
         element={<h1 className=" mt-5 text-center text-light">NOT FOUND !</h1>}
@@ -75,15 +80,14 @@ const App = () => {
     </Routes>
 
     //  <div className="container">
-    //    <h1>Ereny Blog</h1>
-    //    <TechBlog />
+    //
     //    <h1> Pisho Work Here</h1>
     //    <>
     //      <FAQ />
     //      <PrivacyPolicy />
     //      <UsingPrivacy />
     //      <ItellectualProperty />
-    //      <AboutSection />
+    //
     //    </>
     //  </div>
   );
@@ -139,6 +143,8 @@ export default App;
       14. lucide-react  
       15. joi
       16. jwt
+17.chakra ui      
+
 
 
 
