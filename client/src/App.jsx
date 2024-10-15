@@ -1,32 +1,91 @@
 // App.js or HomePage.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import axios from "axios";
-import Joi from "joi";
-import jwtDecode from "jwt-decode";
+import "./App.css";
+import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 // import lucide-react
+import Home from "./pages/Home/Home";
+import SignUp from "./pages/Signup/index";
+import Login from "./pages/Signin/index";
+import ForgetPassword from "./components/ForgetPassword/index";
+import ConfirmCode from "./components/ConfirmCode";
 
-import TechBlog from "./components/Blog/Blog";
-import FAQ from "./pages/FAQ/FAQ";
-import PrivacyPolicy from "./pages/privacyPolicy/index";
-import UsingPrivacy from "./pages/usingPrivacy";
-import ItellectualProperty from "./pages/itellectualProperty";
-import AboutSection from "./pages/customerInformation";
+// import TechBlog from "./components/Blog/Blog";
+// import FAQ from "./pages/FAQ/FAQ";
+// import PrivacyPolicy from "./pages/privacyPolicy/index";
+// import UsingPrivacy from "./pages/usingPrivacy";
+// import ItellectualProperty from "./pages/itellectualProperty";
+// import AboutSection from "./pages/customerInformation";
 const App = () => {
+  let navigate = useNavigate();
+  let [userData, SetUserData] = useState(null);
+  function saveUserData() {
+    if (localStorage.getItem("token")) {
+      let encodeToken = localStorage.getItem("token");
+      let decodeToken = jwtDecode(encodeToken);
+      SetUserData(decodeToken);
+    }
+  }
+
+  function logout() {
+    localStorage.removeItem("token");
+    SetUserData(null);
+    navigate("/login");
+  }
+  useEffect(() => {
+    saveUserData();
+  }, []);
+
+  function ProtectRoute(props) {
+    if (localStorage.getItem("token")) {
+      return props.children;
+    } else {
+      return <Navigate to={"/login"} />;
+    }
+  }
   return (
-    <div className="container">
-      <h1>Ereny Blog</h1>
-      <TechBlog />
-      <h1> Pisho Work Here</h1>
-      <>
-        <FAQ />
-        <PrivacyPolicy />
-        <UsingPrivacy />
-        <ItellectualProperty />
-        <AboutSection />
-      </>
-    </div>
+    <Routes>
+      {localStorage.getItem("token") ? (
+        <Route
+          path="/"
+          element={<Home logout={logout} userData={userData} />}
+        />
+      ) : (
+        <Route path="/" element={<Navigate to="/signup" />} />
+      )}
+      {/* هنا جعلنا SignUp هي الصفحة الرئيسية */}
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/login" element={<Login saveUserData={saveUserData} />} />
+      <Route
+        path="/home"
+        element={
+          <ProtectRoute>
+            <Home logout={logout} userData={userData} />
+          </ProtectRoute>
+        }
+      />
+      <Route path="/forgetPassword" element={<ForgetPassword />} />
+      <Route path="/confirmCode" element={<ConfirmCode />} />
+      <Route
+        path="*"
+        element={<h1 className=" mt-5 text-center text-light">NOT FOUND !</h1>}
+      />
+    </Routes>
+
+    //  <div className="container">
+    //    <h1>Ereny Blog</h1>
+    //    <TechBlog />
+    //    <h1> Pisho Work Here</h1>
+    //    <>
+    //      <FAQ />
+    //      <PrivacyPolicy />
+    //      <UsingPrivacy />
+    //      <ItellectualProperty />
+    //      <AboutSection />
+    //    </>
+    //  </div>
   );
 };
 
