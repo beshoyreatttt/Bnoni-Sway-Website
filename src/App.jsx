@@ -3,21 +3,33 @@ import PrivacyPolicy from "./pages/privacyPolicy/index";
 import UsingPrivacy from "./pages/usingPrivacy";
 import ItellectualProperty from "./pages/itellectualProperty";
 import AboutSection from "./pages/customerInformation";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProductPage from "./pages/product/ProductPage";
+import ProductDetails from "./pages/productDetails/ProductDetails";
 
 function App() {
   return (
-    <h1> Pisho Work Here</h1>
-    // <>
-    //    <FAQ />
-    //    <PrivacyPolicy />
-    //    <UsingPrivacy />
-    //    <ItellectualProperty />
-    //    <AboutSection />
-    // </>
+    <Router>
+      
+      <Routes>
+        <Route path="/product" element={<ProductPage />} />
+        <Route path="/productDetails/:id" element={<ProductDetails />} />
+
+        {/* 
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/using-privacy" element={<UsingPrivacy />} />
+        <Route path="/intellectual-property" element={<ItellectualProperty />} />
+        <Route path="/about" element={<AboutSection />} />
+        */}
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
 /*
   This is the main application file for the React project.
 

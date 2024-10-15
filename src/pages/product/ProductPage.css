@@ -1,0 +1,23 @@
+:root {
+    --main-color: #B0CEEF;
+    --sec-color: #D31737;
+}
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1085px;
+    }
+}
+.notfount{
+    justify-content: center;
+        width: 100%;
+        align-self: center;
+        text-align: center;
+        font-size: 20px;
+        color: #c1260b;
+        font-family: system-ui;
+}

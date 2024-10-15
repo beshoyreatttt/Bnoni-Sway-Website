@@ -4,3 +4,7 @@ body {
   /* Default font for the page, can switch depending on language */
   font-family: "Roboto", sans-serif; /* English */
 }
+:root{
+  --main-color:#F55266;
+  --info-color: #eaf1fb;
+}
