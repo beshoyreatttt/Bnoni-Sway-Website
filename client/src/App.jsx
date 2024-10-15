@@ -69,10 +69,30 @@ const App = () => {
       />
       <Route path="/forgetPassword" element={<ForgetPassword />} />
       <Route path="/confirmCode" element={<ConfirmCode />} />
-      <Route path="/blog" logout={logout} userData={userData} element={<TechBlog />} />
-      <Route path="/about" logout={logout} userData={userData} element={<AboutSection />} />
-      <Route path="/product" logout={logout} userData={userData}  element={<ProductPage />} />
-      <Route path="/productDetails/:id" logout={logout} userData={userData} element={<ProductDetails />} />
+      <Route
+        path="/blog"
+        logout={logout}
+        userData={userData}
+        element={<TechBlog />}
+      />
+      <Route
+        path="/about"
+        logout={logout}
+        userData={userData}
+        element={<AboutSection />}
+      />
+      <Route
+        path="/product"
+        logout={logout}
+        userData={userData}
+        element={<ProductPage />}
+      />
+      <Route
+        path="/productDetails/:id"
+        logout={logout}
+        userData={userData}
+        element={<ProductDetails />}
+      />
       <Route
         path="*"
         element={<h1 className=" mt-5 text-center text-light">NOT FOUND !</h1>}

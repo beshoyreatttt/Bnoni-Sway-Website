@@ -7,8 +7,7 @@ import "./ProductPage.css";
 import { BiErrorCircle } from "react-icons/bi";
 import Navbar from "../../components/Header/Header";
 
-const ProductPage = (userData ,logout) => {
- 
+const ProductPage = (userData, logout) => {
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState("mobile");
@@ -41,35 +40,34 @@ const ProductPage = (userData ,logout) => {
   }, [category, priceRange]);
 
   return (
-    
     <div className="mt-5">
-    <Navbar userData={userData} logout={logout} />
-    <div className="d-flex">
-      <SidebarCategory
-        setCategory={setCategory}
-        setPriceRange={setPriceRange}
-      />
-      <div className="container d-flex justify-content-center my-4 px-6">
-        <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
-          {loading ? (
-            <div className="d-flex justify-content-center align-self-center  w-100">
-              <div className="spinner-border text-warning" role="status">
-                <span className="visually-hidden">Loading...</span>
+      <Navbar userData={userData} logout={logout} />
+      <div className="d-flex">
+        <SidebarCategory
+          setCategory={setCategory}
+          setPriceRange={setPriceRange}
+        />
+        <div className="container d-flex justify-content-center my-4 px-6">
+          <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+            {loading ? (
+              <div className="d-flex justify-content-center align-self-center  w-100">
+                <div className="spinner-border text-warning" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
               </div>
-            </div>
-          ) : products.length === 0 ? (
-            <div className="notfount d-flex ">
-              <BiErrorCircle size={24} className="mt-1 me-1" />
-              <p>No products found</p>
-            </div>
-          ) : (
-            products.map((product, id) => (
-              <ProductCard key={id} product={product} />
-            ))
-          )}
+            ) : products.length === 0 ? (
+              <div className="notfount d-flex ">
+                <BiErrorCircle size={24} className="mt-1 me-1" />
+                <p>No products found</p>
+              </div>
+            ) : (
+              products.map((product, id) => (
+                <ProductCard key={id} product={product} />
+              ))
+            )}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
